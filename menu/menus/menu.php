@@ -20,7 +20,6 @@ $praed = array(
         'nimetus' => 'Hakklihakaste 1/2',
         'kirjeldus' => 'hakklihakaste, lisand, salat, leib',
         'hind' => 1.30)
-
 );
 
 $supid = array(

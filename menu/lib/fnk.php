@@ -33,3 +33,40 @@ function jalus(){
 function soodus($hind, $soodusProtsent){
     return round($hind * ((100 - $soodusProtsent) / 100), 2);
 }
+
+function menu_element($liik, $andmed){
+    echo '<div class="card m-3">
+        <div class="card-header alert-dark">
+            <a href="#'.$liik.'" data-parent="#accordion" data-toggle="collapse" >
+                <h2 class="text-dark">'.strtoupper($liik).' <i class="fas fa-utensil-spoon"></i></h2>
+            </a>
+        </div>';
+    echo '<div id="'.$liik.'" class="collapse">';
+    foreach ($andmed as $element=>$info){
+        echo '<ul class="list-group">';
+        echo '<li class="list-group-item">';
+        echo '<p class="mb-0">'.$info['nimetus'].' <br>';
+        echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
+        echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+        echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+        echo '</p>
+                </li>';
+        echo '</ul>';
+    }
+    echo '</div>';
+    echo '</div>';
+}
+
+function menu($menu){
+    echo '<div class="container-fluid text-center">
+            <div class="row">
+                <div class="col">
+                    <div id="accordion">';
+    foreach ($menu as $liik => $sisu){
+        menu_element($liik, $sisu);
+    }
+    echo '            </div>
+                 </div>
+            </div>
+        </div>';
+}
