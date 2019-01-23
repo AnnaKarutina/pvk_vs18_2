@@ -99,46 +99,34 @@ function soodus($hind, $soodusProtsent){
                         echo '</div>';
                         ?>
                         </div>
-                        <!--<div class="card m-3">
-                            <div class="card-header alert-dark">
-                                <a href="#supid" data-parent="#accordion" data-toggle="collapse" >
-                                    <h2 class="text-dark">SUPID <i class="fas fa-utensil-spoon"></i></h2>
-                                </a>
-                            </div>
-							<?php
-/*							echo '
-                            <div id="supid" class="collapse">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Rassolnik <br>
-                                            <span class="small text-secondary">supp, hapukoor, leib</span><br>
-                                            <span class="badge badge-info">1.10&euro;</span>
-                                            <span class="badge badge-success">0.94&euro;</span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>';
-							*/?>
-                        </div>-->
                         <div class="card m-3">
                             <div class="card-header alert-dark">
                                 <a href="#magus" data-parent="#accordion" data-toggle="collapse" >
                                     <h2 class="text-dark">MAGUSTOIDUD <i class="fas fa-cookie-bite"></i></h2>
                                 </a>
                             </div>
-							<?php
-							echo '
-                            <div id="magus" class="collapse">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Rosinakisell vahukoorega <br>
-                                            <span class="badge badge-info">1.05&euro;</span>
-                                            <span class="badge badge-success">0.90&euro;</span>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>';
-							?>
+                            <?php
+                            $magusad = array(
+                                array(
+                                    'nimetus' => 'Rosinakisell vahukoorega',
+                                    'kirjeldus' => '',
+                                    'hind' => 1.05),
+
+                            );
+                            echo '<div id="magus" class="collapse">';
+                            foreach ($magusad as $magus=>$info){
+                                echo '<ul class="list-group">';
+                                echo '<li class="list-group-item">';
+                                echo '<p class="mb-0">'.$info['nimetus'].' <br>';
+                                echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span><br>';
+                                echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+                                echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+                                echo '</p>
+                                    </li>';
+                                echo '</ul>';
+                            }
+                            echo '</div>';
+                            ?>
                         </div>
                         <div class="card m-3">
                             <div class="card-header alert-dark">
@@ -146,26 +134,42 @@ function soodus($hind, $soodusProtsent){
                                     <h2 class="text-dark">JOOGID <i class="fas fa-glass-whiskey"></i></h2>
                                 </a>
                             </div>
-							<?php
-							echo '
-                            <div id="joogid" class="collapse">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Mahl <span class="badge badge-info">0.60&euro;</span></p>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Morss <span class="badge badge-info">0.25&euro;</span></p>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Piim <span class="badge badge-info">0.30&euro;</span></p>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <p class="mb-0">Keefir <span class="badge badge-info">0.39&euro;</span></p>
-                                    </li>
-                                </ul>
-                            </div>';
-							?>
+                            <?php
+                            $joogid = array(
+                                array(
+                                    'nimetus' => 'Mahl',
+                                    'kirjeldus' => '',
+                                    'hind' => 0.60),
+                                array(
+                                    'nimetus' => 'Morss',
+                                    'kirjeldus' => '',
+                                    'hind' => 0.25),
+                                array(
+                                    'nimetus' => 'Piim',
+                                    'kirjeldus' => '',
+                                    'hind' => 0.30),
+                                array(
+                                    'nimetus' => 'Keefir',
+                                    'kirjeldus' => '',
+                                    'hind' => 0.39)
+
+                            );
+                            echo '<div id="joogid" class="collapse">';
+                            foreach ($joogid as $jook=>$info){
+                                echo '<ul class="list-group">';
+                                echo '<li class="list-group-item">';
+                                echo '<p class="mb-0">'.$info['nimetus'].' ';
+                                echo '<span class="small text-secondary">'.$info['kirjeldus'].'</span>';
+                                echo '<span class="badge badge-info">'.$info['hind'].'&euro;</span>';
+//                                echo '<span class="badge badge-success">'.soodus($info['hind'], 15).'&euro;</span>';
+                                echo '</p>
+                                    </li>';
+                                echo '</ul>';
+                            }
+                            echo '</div>';
+                            ?>
                         </div>
+
                     </div>
                 </div>
             </div>
