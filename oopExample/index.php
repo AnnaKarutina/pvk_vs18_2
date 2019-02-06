@@ -6,6 +6,7 @@
  * Time: 10:35
  */
 require_once 'Text.php';
+require_once 'ColorText.php';
 
 $hello1 = new Text();
 
@@ -22,3 +23,14 @@ print_r($hello1);
 echo '</pre>';
 
 $hello1->showText();
+
+echo '<hr>';
+
+$hello2 = new ColorText('Red Text Edition', 'red');
+
+
+echo '<pre>';
+print_r($hello2);
+echo '</pre>';
+
+$hello2->showText();
