@@ -7,7 +7,7 @@
  */
 require_once 'Text.php';
 
-$hello1 = new Text('Hello Word');
+$hello1 = new Text();
 
 echo '<pre>';
 print_r($hello1);

@@ -14,7 +14,7 @@ class Text
      * Text constructor.
      * @param string $s
      */
-    public function __construct($s)
+    public function __construct($s = '')
     {
         $this->setText($s);
     }
