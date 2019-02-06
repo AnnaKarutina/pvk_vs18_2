@@ -9,4 +9,12 @@
 class Text
 {
     var $str = '';
+
+    function setText($s){
+        $this->str = $s;
+    }
+
+    function showText(){
+        echo '<b>'.$this->str.'</b><br>';
+    }
 }
