@@ -7,9 +7,15 @@
  */
 require_once 'Text.php';
 
-$hello1 = new Text();
+$hello1 = new Text('Hello Word');
 
-$hello1->setText('Hello Word');
+echo '<pre>';
+print_r($hello1);
+echo '</pre>';
+
+$hello1->showText();
+
+$hello1->setText('Another string');
 
 echo '<pre>';
 print_r($hello1);

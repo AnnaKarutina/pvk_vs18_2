@@ -10,6 +10,16 @@ class Text
 {
     var $str = '';
 
+    /**
+     * Text constructor.
+     * @param string $s
+     */
+    public function __construct($s)
+    {
+        $this->setText($s);
+    }
+
+
     function setText($s){
         $this->str = $s;
     }
