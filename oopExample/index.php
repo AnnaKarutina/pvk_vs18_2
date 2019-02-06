@@ -26,7 +26,7 @@ $hello1->showText();
 
 echo '<hr>';
 
-$hello2 = new ColorText('Red Text Edition', 'red');
+$hello2 = new ColorText('Red Text Edition');
 
 
 echo '<pre>';

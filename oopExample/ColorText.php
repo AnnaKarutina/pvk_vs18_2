@@ -17,7 +17,7 @@ class ColorText extends Text
      * @param string $s
      * @param string $c
      */
-    public function __construct($s, $c)
+    public function __construct($s = '', $c = '')
     {
         parent::__construct($s);
         $this->setColor($c);
@@ -26,5 +26,14 @@ class ColorText extends Text
 
     function setColor($c){
         $this->color = $c;
+    }
+
+    function showText()
+    {
+        if($this->color == ''){
+            parent::showText();
+        } else {
+            echo '<p style="color: '.$this->color.'"><b>'.$this->str.'</b></p>';
+        }
     }
 }
