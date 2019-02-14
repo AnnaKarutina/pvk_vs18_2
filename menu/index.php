@@ -50,6 +50,7 @@ foreach ($categories as $category){
     $cardHeaderTmpl->set('icon', $category['icon']);
     $cardTmpl->set('card_header', $cardHeaderTmpl->parse());
 
+    $cardDataTmpl->set('category', $category['name']);
     $listTmpl = new Template('list');
     foreach ($category['data'] as $dish){
         foreach ($dish as $name=>$value){
