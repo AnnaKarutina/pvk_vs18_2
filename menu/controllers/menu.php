@@ -1,16 +1,17 @@
 <?php
-require_once 'menus/menu.php';
+$sql = 'SELECT * FROM dish_types';
+$categories = $db->getData($sql);
 
 foreach ($categories as $category){
     $cardTmpl = new Template('card');
     $cardHeaderTmpl = new Template('header');
     $cardDataTmpl = new Template('data');
 
-    $cardHeaderTmpl->set('category', $category['name']);
-    $cardHeaderTmpl->set('icon', $category['icon']);
+    $cardHeaderTmpl->set('category', $category['type_name']);
+    $cardHeaderTmpl->set('icon', $category['type_icon']);
     $cardTmpl->set('card_header', $cardHeaderTmpl->parse());
 
-    $cardDataTmpl->set('category', $category['name']);
+    $cardDataTmpl->set('category', $category['type_name']);
     $listTmpl = new Template('list');
     foreach ($category['data'] as $dish){
         foreach ($dish as $name=>$value){
