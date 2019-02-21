@@ -12,6 +12,10 @@ foreach ($categories as $category){
     $cardTmpl->set('card_header', $cardHeaderTmpl->parse());
 
     $cardDataTmpl->set('category', $category['type_name']);
+
+    $sql = 'SELECT * FROM dishes WHERE type_id='.fixDb($category['type_id']);
+    $category['data'] = $db->getData($sql);
+
     $listTmpl = new Template('list');
     foreach ($category['data'] as $dish){
         foreach ($dish as $name=>$value){
