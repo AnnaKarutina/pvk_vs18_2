@@ -1,8 +1,4 @@
 <?php
-// loome vajalikud vaade objektid
-$mainTmpl = new Template('main');
-$mainTmpl->set('title', 'Menu App');
-$contentTmpl = new Template('content');
+$link = $http->getLink(array('controller' => 'menu'));
+$http->redirect($link);
 
-$mainTmpl->set('content', $contentTmpl->parse());
-echo $mainTmpl->parse();
